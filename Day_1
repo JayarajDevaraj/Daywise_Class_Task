@@ -1,0 +1,44 @@
+1.Blog on difference between HTTP1 Vs HTTP2
+
+HTTP - Hyper Text  Transfer Protocal 
+
+Its used to communicate web clients and server.
+
+HTTP1 was released on 1999 and HTTP2 was released 2015.
+
+HTTP1 was literally slow to communicate web and server like each and every time client sends a request to server and the send back to response.
+
+HTTP2 was improved better than HTTP1.its more faster then HTTP1 
+Because HTTP2  is allows multiple request in one connection to server.
+
+
+Feature os HTTP2 is server push its allows to server  to send resources before clint request 
+
+HTTP1was text based farming and HTTP2 was binary farming
+Binary farming reduce the parsing and number of errors compare to text based farming.
+
+
+HTTP2 is header comparison which can save bandwidth which can reused in same connection. 
+
+2.Blog about Objects and its internal representation in JavaScript
+
+In Javascript object are used in represent complex data structure
+And the play critical role in Javascript.
+Objects are essential part in javascript programand understanding how they are represented internally is crucial for writing effeciect and effective code
+
+Object in Javascript is unordered collection of key value pairs
+Where each key is a string or symbol and each value can be any data type, Including other Objects.
+
+Object in Javascript can be created using object literals ,constructors or classes.
+
+When an Object is created in Javascript its is allocated memory to store its properties and methods 
+
+The internal representation od an Object in Javascript is typically implemented as dictionary or hash table ,where the keys represent the property names and the values represent the property values
+
+ 
+Javascript engines use a technique called hidden classes to optimize the access to an objects properties.
+
+
+Javascript also a garbage collector that automatically deallocates memory when objects are no longer referenced .
+
+
