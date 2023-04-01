@@ -1,0 +1,12 @@
+1.Difference between Window and Document Object.
+
+Window Object:
+Window is global object its available everywhere like a sky
+Window is high level object .in the browsers Javascript environment .
+Window object properties and methods allows to manipaluate the browser window.
+Window is maintaining browser naviganation history and its provide access to current location and URL of the page.
+Document Object:
+Document Object is represtnets web page itself and property of the window object.
+The Document Object provides access to all elements and contents of current web page(HTML elements ,text and image).
+Document Object properties and methods are allows to modify or retrieve the page content dynamically .(add or remove elements,page style and manipulating DOM-Document Object Model)
+ 
