@@ -63,3 +63,67 @@ Object.entries(data).forEach(([key, value]) => {
   console.log(key + ": " + value);
   
 });
+
+
+
+2.Create a Own resume JSON format
+
+const resume = {
+  "name": "Jayaraj Devaraj",
+  "email": "jaganrajeee97@gmail.com",
+  "phone": "+91 8122508205",
+  "address": {
+    "street": "Bindhu Layout, BSF-STS Main Road, Kattiganahalli",
+    "city": "Yelahanka",
+    "state": "Bangalore",
+    "postalCode": "560063"
+  },
+  "linkedin": "https://www.linkedin.com/in/jayaraj-devaraj-60434b161/",
+  "summary": "As a dedicated electrical engineer with 7 years of experience, I have developed expertise in troubleshooting and resolving complex electrical issues in a timely and efficient manner. With a strong understanding of electrical systems and components, I have provided technical assistance to clients and colleagues, ensuring the safe and reliable operation of equipment and machinery. I am committed to maintaining high-quality standards and delivering exceptional customer service, as evidenced by my track record of achieving high levels of client satisfaction. As a team player with excellent communication skills, I am confident in my ability to collaborate effectively with colleagues and clients to achieve shared objectives.",
+  "skills": [
+    "Strong knowledge of electrical and electronic systems and components",
+    "Proficiency in troubleshooting and problem solving",
+    "Experience with testing and commissioning of electrical systems",
+    "Ability to read and interpret electrical schematics and technical manuals",
+    "Ability to work independently as well as part of a team",
+    "Excellent communication skills for interacting with clients and colleagues",
+    "Proficiency in using electrical testing equipment and software"
+  ],
+  "experience": [
+    {
+      "title": "Electrical Engineer",
+      "company": "Falcon Auto Tech Pvt.Ltd",
+      "startDate": "Mar 2019",
+      "endDate": "Present",
+      "description": "Experienced in providing technical support for the operation and maintenance of intra-logistics warehouse automation systems as a service and support electrical engineer."
+    },
+    {
+      "title": "Installation Electrical Engineer",
+      "company": "Auto Edge Advanced Automation Technologies Pvt.Ltd",
+      "startDate": "Sep 2018",
+      "endDate": "Feb 2019",
+      "description": "working on conveyor line projects and SPM installation, commissioning and maintaining complex electrical systems to ensure the smooth operation of industrial machinery."
+    },
+    {
+      "title": "Electrical Engineering Technician",
+      "company": "Sai Project and System Pvt.Ltd",
+      "startDate": "Jul 2015",
+      "endDate": "Sep 2018",
+      "description": "As an electrical technician, I have experience in house panel erection and electrical wiring. ensuring proper installation and functionality of electrical systems."
+    }
+  ]
+};
+
+console.log(`Resume of ${resume.name}\n`);
+console.log(`Contact Information:\nEmail: ${resume.email}\nPhone: ${resume.phone}\nAddress: ${resume.address.street}, ${resume.address.city}, ${resume.address.state} ${resume.address.postalCode}\nLinkedIn: ${resume.linkedin}\n`);
+console.log(`Summary:\n${resume.summary}\n`);
+console.log(`Skills:\n${resume.skills.join('\n')}\n`);
+console.log(`Experience:`);
+
+resume.experience.forEach(exp => {
+  console.log(`\n${exp.title}\n${exp.company}, ${exp.startDate} - ${exp.endDate}\n${exp.description}\n`);
+});
+
+
+
+
