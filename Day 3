@@ -1,0 +1,65 @@
+1.for given JSON iterate over all for loops(for,for in,for of & for Each)
+
+let data = {
+    
+  "Name": "Jayaraj Devaraj",
+  
+  "Age": 26,
+  
+  "Course" : "FSD",
+  
+  "Batch" : "B46 WE Tamil",
+  
+  "City": "Bangalore"
+};
+
+//FOR LOOP========>
+
+// Get an array of keys from the object
+
+let mydetail = Object.keys(data);
+
+// Loop over the array of keys using a for loop
+
+for (let i = 0; i < mydetail.length; i++) {
+    
+  // Get the current key and value
+  
+  let key = mydetail[i];
+  
+  let value = data[key];
+  
+  // Print the key-value pair
+  
+  console.log(key + ": " + value);
+}
+
+// FOR IN===============>
+
+for (const key in data) {
+    
+  if (data.hasOwnProperty(key)) {
+      
+    const value = data[key];
+    
+    console.log(key + ": " + value);
+  }
+}
+
+// FOR OF===============>
+
+
+for (const [key, value] of Object.entries(data)) {
+    
+  console.log(key + ": " + value);
+  
+}
+
+// FOR EACH============>
+
+
+Object.entries(data).forEach(([key, value]) => {
+    
+  console.log(key + ": " + value);
+  
+});
