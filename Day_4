@@ -1,0 +1,152 @@
+1.How to compare 2 JSON have the same properties without order?
+
+
+For comparison we have to convert JSON to String.
+Formula for JSON to String
+JSON.stringify
+
+
+   let obj1 = {name: "Person 1", age:5};
+
+   let obj2={age:5, name: "Person 1" };
+    
+    if(JSON.stringify(obj1) === JSON.stringify(obj2)) {
+        
+      console.log("The two objects are equal.");
+      
+    } else {
+        
+      console.log("The two objects are not equal.");
+      
+    }
+
+2.Use the rest countries API url https://restcountries.com/v3.1/all and display all the country flag in the console.
+
+
+
+This code for Console view as a link
+<!DOCTYPE html>
+
+<html lang="en">
+
+ <head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale-1.0"> <title>All Country Flag</title>
+play the count...
+ </head>
+<body>
+<script>
+fetch("https://restcountries.com/v3.1/all")
+.then(response => response.json())
+.then(data => {
+data.forEach(country => {
+console.log(country.flags.png);
+.catch(error -> console.error(error));
+</script>
+</body>
+</html>
+This code for display on Window
+
+<div id="country-flags"></div>
+
+<script>
+  fetch("https://restcountries.com/v3.1/all")
+    .then(response => response.json())
+    .then(data => {
+      const flagsDiv = document.getElementById("country-flags");
+      data.forEach(country => {
+        const flagImg = document.createElement("img");
+        flagImg.src = country.flags.png;
+        flagsDiv.appendChild(flagImg);
+      });
+    })
+    .catch(error => console.error(error));
+</script>
+
+
+3. Use the same rest countries and print all countries Name, Region, Sub-Region and populations?
+
+
+This code shows Flag , Name , Region, Sub-Region and Population
+
+<div id="country-flags"></div>
+
+<script>
+  fetch("https://restcountries.com/v3.1/all")
+    .then(response => response.json())
+    .then(data => {
+      const flagsDiv = document.getElementById("country-flags");
+      data.forEach(country => {
+        const flagImg = document.createElement("img");
+        flagImg.src = country.flags.png;
+        flagsDiv.appendChild(flagImg);
+        
+        const countryInfo = document.createElement("div");
+        const name = document.createElement("h2");
+        name.textContent = country.name.common;
+        const region = document.createElement("p");
+        region.textContent = `Region: ${country.region}`;
+        const subRegion = document.createElement("p");
+        subRegion.textContent = `Sub-region: ${country.subregion}`;
+        const population = document.createElement("p");
+        population.textContent = `Population: ${country.population}`;
+        
+        countryInfo.appendChild(name);
+        countryInfo.appendChild(region);
+        countryInfo.appendChild(subRegion);
+        countryInfo.appendChild(population);
+        flagsDiv.appendChild(countryInfo);
+      });
+    })
+    .catch(error => console.error(error));
+</script>
+
+
+This code will Display only Country Name, Region, Sub-Region and Population
+
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Region</th>
+      <th>Sub-region</th>
+      <th>Population</th>
+    </tr>
+  </thead>
+  <tbody id="country-info"></tbody>
+</table>
+
+<script>
+  fetch("https://restcountries.com/v3.1/all")
+    .then(response => response.json())
+    .then(data => {
+      const countryInfoTable = document.getElementById("country-info");
+      data.forEach(country => {
+        const name = country.name.common;
+        const region = country.region;
+        const subRegion = country.subregion;
+        const population = country.population;
+        
+        const row = document.createElement("tr");
+        const nameCell = document.createElement("td");
+        nameCell.textContent = name;
+        const regionCell = document.createElement("td");
+        regionCell.textContent = region;
+        const subRegionCell = document.createElement("td");
+        subRegionCell.textContent = subRegion;
+        const populationCell = document.createElement("td");
+        populationCell.textContent = population;
+        
+        row.appendChild(nameCell);
+        row.appendChild(regionCell);
+        row.appendChild(subRegionCell);
+        row.appendChild(populationCell);
+        countryInfoTable.appendChild(row);
+      });
+    })
+    .catch(error => console.error(error));
+</script>
+
+
